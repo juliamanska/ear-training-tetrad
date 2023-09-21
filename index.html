@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kształcenie słuchu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  </head>
+  <body>
+    <audio
+      id="audio1"
+      source
+      src="czterodzwieki/dur_6m.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio2"
+      source
+      src="czterodzwieki/dur_6w.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio3"
+      source
+      src="czterodzwieki/dur_7m.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio4"
+      source
+      src="czterodzwieki/dur_7w.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio5"
+      source
+      src="czterodzwieki/dur_9n.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio6"
+      source
+      src="czterodzwieki/dur_9w.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio7"
+      source
+      src="czterodzwieki/moll_6m.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio8"
+      source
+      src="czterodzwieki/moll_6w.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio9"
+      source
+      src="czterodzwieki/moll_7m.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio10"
+      source
+      src="czterodzwieki/moll_7w.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio11"
+      source
+      src="czterodzwieki/moll_9m.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio12"
+      source
+      src="czterodzwieki/moll_9w.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio13"
+      source
+      src="czterodzwieki/zmn_7m.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <audio
+      id="audio14"
+      source
+      src="czterodzwieki/zmn_7zm.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <div class="bigContainer">
+      <div id="menu">
+        <h2><button id="start">START</button></h2>
+        <h2><button id="replay">replay</button></h2>
+        <h2 id="cor">Correct: <span id="correct">0</span></h2>
+        <h2 id="cor">Incorrect: <span id="incorrect">0</span></h2>
+      </div>
+      <!-- <h2>Incorrect: <span id="incorrect">0</span></h2> -->
+      <h2><span id="result"></span></h2>
+      <div id="czterodzwieki">
+        <button id="b1">dur z 6></button>
+        <button id="b2">dur z 6</button>
+        <button id="b3">dur z 7</button>
+        <button id="b4">dur z 7&lt</button>
+        <button id="b5">dur z 9></button>
+        <button id="b6">dur z 9</button>
+        <button id="b7">moll z 6></button>
+        <button id="b8">moll z 6</button>
+        <button id="b9">moll z 7</button>
+        <button id="b10">moll z 7&lt</button>
+        <button id="b11">moll z 9></button>
+        <button id="b12">moll z 9</button>
+        <button id="b13">zmn z 7</button>
+        <button id="b14">zmn z 7></button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

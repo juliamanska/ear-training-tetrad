@@ -1,13 +1,13 @@
 const start = document.querySelector('#start');
 const replay = document.querySelector('#replay');
 
+
 const possibleButtons = czterodzwieki.querySelectorAll('div > button');
 const incorrectDisplay = document.getElementById('incorrect');
 const correctDisplay = document.getElementById('correct');
-const lastPlayed = null;
 // const resultDisplay = document.getElementById('result')
 
-const dur_6m = document.getElementById('audio1')
+const dur_6m = document.getElementById('audio1').currentSrc;
 const dur_6w = document.getElementById('audio2')
 const dur_7m = document.getElementById('audio3')
 const dur_7w = document.getElementById('audio4')
@@ -27,73 +27,78 @@ let correct = 0;
 let incorrect = 0;
 let randomAudioNumber;
 let userChoice;
-
+let lastPlayed; 
 
 start.addEventListener('click', playRandomAudio);
-// replay.addEventListener('click', playLastAudio);
 
 function playRandomAudio() {
-    randomAudioNumber = Math.floor(Math.random() * 14 + 1) ; 
+    randomAudioNumber = Math.floor(Math.random() * 14 + 1);
     console.log(randomAudioNumber);
-    // lastPlayed=randomAudioNumber;
     playConcreteAudio(randomAudioNumber);
 }
 
-function playLastAudio() {
+replay.addEventListener('click', replayAudio);
+
+
+
+function replayAudio() {
     playConcreteAudio(lastPlayed);
+    console.log(lastPlayed);
 }
 
 
-function playConcreteAudio(randomAudioNumber) {
-
-
-    if(randomAudioNumber === 1) {
+function playConcreteAudio(audioNumber) {
+    if(audioNumber === 1) {
         playAudio(dur_6m);
     } 
-    if(randomAudioNumber === 2) {
+    if(audioNumber === 2) {
         playAudio(dur_6w);
     } 
-    if(randomAudioNumber === 3) {
+    if(audioNumber === 3) {
         playAudio(dur_7m);
     } 
-    if(randomAudioNumber === 4) {
+    if(audioNumber === 4) {
         playAudio(dur_7w);
     } 
-    if(randomAudioNumber === 5) {
+    if(audioNumber === 5) {
         playAudio(dur_9m);
     } 
-    if(randomAudioNumber === 6) {
+    if(audioNumber === 6) {
         playAudio(dur_9w);
     } 
-    if(randomAudioNumber === 7) {
+    if(audioNumber === 7) {
         playAudio(moll_6m);
     } 
-    if(randomAudioNumber === 8) {
+    if(audioNumber === 8) {
         playAudio(moll_6w);
     } 
-    if(randomAudioNumber === 9) {
+    if(audioNumber === 9) {
         playAudio(moll_7m);
     } 
-    if(randomAudioNumber === 10) {
+    if(audioNumber === 10) {
         playAudio(moll_7w);
     } 
-    if(randomAudioNumber === 11) {
+    if(audioNumber === 11) {
         playAudio(moll_9m);
     } 
-    if(randomAudioNumber === 12) {
+    if(audioNumber === 12) {
         playAudio(moll_9w);
     } 
-    if(randomAudioNumber === 13) {
+    if(audioNumber === 13) {
         playAudio(zmn_7m);
     } 
-    if(randomAudioNumber === 14) {
+    if(audioNumber === 14) {
         playAudio(zmn_7zm);
-    } 
+    }
+    lastPlayed = audioNumber;
+
 }
+
 
 function playAudio(name) { 
     name.play(); 
   } 
+
 
 possibleButtons.forEach(possibleButton => possibleButton.addEventListener('click', (e) => {
     userChoice = e.target.id;
@@ -131,11 +136,10 @@ function checkResult(){
             correct++;
         } else if (randomAudioNumber === 14 && userChoice == 'b14') {
             correct++;
-        } else{
+        } else {
             alert('correct: ' + randomAudioNumber);
             incorrect++;
             incorrectDisplay.innerHTML = incorrect;
-
         }
         playRandomAudio();
         correctDisplay.innerHTML = correct;   
@@ -158,7 +162,10 @@ function checkResult(){
 //         button.addEventListener('click', () => {
            
 
-
-
-
-
+//     for (let value of chordsSound.values()) { 
+//         if (randomAudioNumber == value) {
+//             playAudio(chordsSound.keys())
+//             break
+//         }
+//     }
+// }

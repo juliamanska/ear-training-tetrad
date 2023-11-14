@@ -105,5 +105,3 @@ replay.addEventListener("click", playLastAudio);
 function playLastAudio() {
   playAudio(audioMap.get(lastPlayed));
 }
-
-//zmienić to dopasoywanie

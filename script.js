@@ -30,20 +30,20 @@ let randomAudio;
 
 //(key, value)
 let audioMap = new Map([
-  ["dur z 6>", adur_6m],
-  ["dur z 6", adur_6w],
-  ["dur z 7", adur_7m],
-  ["dur z 7<", adur_7w],
-  ["dur z 9>", adur_9m],
-  ["dur z 9", adur_9w],
-  ["moll z 6>", amoll_6m],
-  ["moll z 6", amoll_6w],
-  ["moll z 7", amoll_7m],
-  ["moll z 7<", amoll_7w],
-  ["moll z 9>", amoll_9m],
-  ["moll z 9", amoll_9w],
-  ["zmn z 7", azmn_7m],
-  ["zmn z 7>", azmn_7zm],
+  ["+ 6>", adur_6m],
+  ["+ 6", adur_6w],
+  ["+ 7", adur_7m],
+  ["+ 7<", adur_7w],
+  ["+ 9>", adur_9m],
+  ["+ 9", adur_9w],
+  ["o 6>", amoll_6m],
+  ["o 6", amoll_6w],
+  ["o 7", amoll_7m],
+  ["o 7<", amoll_7w],
+  ["o 9>", amoll_9m],
+  ["o 9", amoll_9w],
+  ["zmn 7", azmn_7m],
+  ["zmn 7>", azmn_7zm],
 ]);
 
 function createButton(item) {
@@ -66,7 +66,7 @@ for (let item of audioMap.keys()) {
   });
   // append button to container
   buttonContainer.appendChild(button);
-  button.innerHTML = item;
+  button.innerHTML = `<span class = 'btn-text' >${item}<span>`;
 }
 
 function checkResult() {
